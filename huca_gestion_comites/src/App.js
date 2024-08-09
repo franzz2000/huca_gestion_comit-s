@@ -1,22 +1,22 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MemberList from './components/Members/MemberList';
 // Importar otros componentes
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div>
         <nav>
           {/* Agregar navegación */}
         </nav>
-        <Switch>
-          <Route path="/members" component={MemberList} />
+        <Routes>
+          <Route path="/members" element={<MemberList />} />
           {/* Agregar más rutas */}
-        </Switch>
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

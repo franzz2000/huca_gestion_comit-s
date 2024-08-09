@@ -1,4 +1,4 @@
-GET http://localhost:3000/api/members
+GET http://localhost:3001/api/members
 
 ### Crear un miembro
 POST http://localhost:3000/api/members/
@@ -15,23 +15,23 @@ content-type: application/json
 
 ### Recuperar un miembro
 # Incluir un id correcto
-GET http://localhost:3000/api/members/66b5eae59321731ca563185c
+GET http://localhost:3001/api/members/66b5eae59321731ca563185c
 
 ### 
-PUT http://localhost:3000/api/members/66b5eae59321731ca563185c
+PUT http://localhost:3001/api/members/66b5eb3f9321731ca563185f
 Content-Type: application/json
 
 {"name": "Juan"}
 
 ###
-DELETE http://localhost:3000/api/members/66b5e5c29321731ca5631854
+DELETE http://localhost:3001/api/members/66b5e5c29321731ca5631854
 
 ###
-GET http://localhost:3000/api/committees
+GET http://localhost:3001/api/committees
 
 ###
 
-POST http://localhost:3000/api/committees
+POST http://localhost:3001/api/committees
 Content-Type: application/json
 
 {
