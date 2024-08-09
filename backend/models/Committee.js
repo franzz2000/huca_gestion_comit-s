@@ -10,6 +10,8 @@ const CommitteeMemberSchema = new mongoose.Schema({
 
 const CommitteeSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
+  tipo1: { type: String },
+  tipo2: { type: String },
   constitutionDate: { type: Date, required: true },
   endDate: Date,
   members: [CommitteeMemberSchema]

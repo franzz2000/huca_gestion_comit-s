@@ -9,18 +9,43 @@ content-type: application/json
     "jobTitle": "Traumatología",
     "phone": "656473937",
     "email": "franzz2000@mail.com",
-    "identifier": "37333513M",
+    "identifier": "37333514M",
     "comment": "Esto es un comentario"
  }
 
 ### Recuperar un miembro
 # Incluir un id correcto
-GET http://localhost:3000/api/members/66b5e5c29321731ca5631854
+GET http://localhost:3000/api/members/66b5eae59321731ca563185c
 
 ### 
-PUT http://localhost:3000/api/members/66b5e5c29321731ca5631854
+PUT http://localhost:3000/api/members/66b5eae59321731ca563185c
 Content-Type: application/json
 
 {"name": "Juan"}
 
 ###
+DELETE http://localhost:3000/api/members/66b5e5c29321731ca5631854
+
+###
+GET http://localhost:3000/api/committees
+
+###
+
+POST http://localhost:3000/api/committees
+Content-Type: application/json
+
+{
+  "name": "Comité de sarcoma",
+  "tipo1": "Comité",
+  "tipo2": "Calidad",
+  "constitutionDate": "2024-11-05",
+  "members": [
+    {"_id": "66b5eb3f9321731ca563185f",
+    "role": "Miembro",
+    "startDate": "2024-11-06"}
+  ]
+}
+
+###
+
+GET http://localhost:3000/api/committees/members/66b5ee9d6dd32c5eb75d2230
