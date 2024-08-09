@@ -1,0 +1,26 @@
+GET http://localhost:3000/api/members
+
+### Crear un miembro
+POST http://localhost:3000/api/members/
+content-type: application/json
+
+ {"name": "Pedro",
+    "surname": "Jimeno Demuth",
+    "jobTitle": "Traumatología",
+    "phone": "656473937",
+    "email": "franzz2000@mail.com",
+    "identifier": "37333513M",
+    "comment": "Esto es un comentario"
+ }
+
+### Recuperar un miembro
+# Incluir un id correcto
+GET http://localhost:3000/api/members/66b5e5c29321731ca5631854
+
+### 
+PUT http://localhost:3000/api/members/66b5e5c29321731ca5631854
+Content-Type: application/json
+
+{"name": "Juan"}
+
+###

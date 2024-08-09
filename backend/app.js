@@ -10,11 +10,11 @@ const app = express();
 app.use(express.json());
 
 // Conectar a MongoDB
-mongoose.connect('mongodb://localhost/comites_db', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost/comites_db');
 
 app.use('/api/members', membersRouter);
 app.use('/api/committees', committeesRouter);
 app.use('/api/meetings', meetingsRouter);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
