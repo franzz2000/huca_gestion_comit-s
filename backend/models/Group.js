@@ -14,6 +14,7 @@ const GroupSchema = new mongoose.Schema({
   tipo2: { type: String },
   constitutionDate: { type: Date, required: true },
   endDate: Date,
+  comment: String,
   members: [GroupMemberSchema]
 });
 
