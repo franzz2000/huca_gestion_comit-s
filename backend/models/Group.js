@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const CommitteeMemberSchema = new mongoose.Schema({
+const GroupMemberSchema = new mongoose.Schema({
   member: { type: mongoose.Schema.Types.ObjectId, ref: 'Member' },
   startDate: { type: Date, required: true },
   endDate: Date,
@@ -8,13 +8,13 @@ const CommitteeMemberSchema = new mongoose.Schema({
   comment: String
 });
 
-const CommitteeSchema = new mongoose.Schema({
+const GroupSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   tipo1: { type: String },
   tipo2: { type: String },
   constitutionDate: { type: Date, required: true },
   endDate: Date,
-  members: [CommitteeMemberSchema]
+  members: [GroupMemberSchema]
 });
 
-module.exports = mongoose.model('Committee', CommitteeSchema);
+module.exports = mongoose.model('Group', GroupSchema);

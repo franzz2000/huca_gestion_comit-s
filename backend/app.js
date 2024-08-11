@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const membersRouter = require('./routes/members');
-const committeesRouter = require('./routes/committees');
+const groupsRouter = require('./routes/groups');
 const meetingsRouter = require('./routes/meetings');
 
 const app = express();
@@ -16,7 +16,7 @@ app.use(express.json());
 mongoose.connect('mongodb://localhost/comites_db');
 
 app.use('/api/members', membersRouter);
-app.use('/api/committees', committeesRouter);
+app.use('/api/groups', groupsRouter);
 app.use('/api/meetings', meetingsRouter);
 
 const PORT = process.env.PORT || 3001;

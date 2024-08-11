@@ -18,7 +18,7 @@ const MemberList = () => {
       <h2>Miembros</h2>
       <ul>
         {members.map(member => (
-          <li key={member._id}>{member.name} {member.surname}</li>
+          <li key={member._id}>{member.name} {member.surname} {member.email}</li>
         ))}
       </ul>
     </div>
