@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const membersRouter = require('./routes/members');
 const groupsRouter = require('./routes/groups');
 const meetingsRouter = require('./routes/meetings');
+const loginRouter = require('./routes/login');
 
 const app = express();
 app.use(cors({
@@ -18,6 +19,7 @@ mongoose.connect('mongodb://localhost/comites_db');
 app.use('/api/members', membersRouter);
 app.use('/api/groups', groupsRouter);
 app.use('/api/meetings', meetingsRouter);
+app.use('/api/login', loginRouter);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
