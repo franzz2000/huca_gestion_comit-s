@@ -499,14 +499,14 @@
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';stroke-width:0.264583"
-       x="244.42619"
+       x="245.70776"
        y="32.325195"
        id="text34"><tspan
          sodipodi:role="line"
          id="tspan34"
          style="stroke-width:0.264583"
-         x="244.42619"
-         y="32.325195">Añadir Comité</tspan></text>
+         x="245.70776"
+         y="32.325195">Añadir grupo</tspan></text>
     <path
        sodipodi:type="star"
        style="fill:#000000;stroke:none;stroke-width:8.00156;stroke-linecap:round"
@@ -735,14 +735,14 @@
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';stroke-width:0.264583"
-       x="173.60611"
+       x="174.42984"
        y="32.325195"
        id="text57"><tspan
          sodipodi:role="line"
          id="tspan57"
          style="stroke-width:0.264583"
-         x="173.60611"
-         y="32.325195">Añadir Reunión</tspan></text>
+         x="174.42984"
+         y="32.325195">Añadir reunión</tspan></text>
     <rect
        style="opacity:1;fill:none;stroke:#000000;stroke-width:0.892066;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
        id="rect58"
