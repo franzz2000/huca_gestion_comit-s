@@ -13,12 +13,25 @@ content-type: application/json
     "comment": "Esto es un comentario"
  }
 
+###
+POST http://localhost:3001/api/members/
+content-type: application/json
+
+ {"name": "Javier",
+    "surname": "González Fernández",
+    "jobTitle": "Enfermero",
+    "phone": "656473933",
+    "email": "franz112000@gmail.com",
+    "identifier": "37333514M",
+    "comment": "Esto es un segundo comentario"
+ }
+
 ### Recuperar un miembro
 # Incluir un id correcto
-GET http://localhost:3001/api/members/66b5eae59321731ca563185c
+GET http://localhost:3001/api/members/66b98308ed75a37bf68a0432
 
 ### 
-PUT http://localhost:3001/api/members/66b5eb3f9321731ca563185f
+PUT http://localhost:3001/api/members/66b98308ed75a37bf68a0432
 Content-Type: application/json
 
 {"name": "Juan"}
@@ -40,7 +53,7 @@ Content-Type: application/json
   "tipo2": "Calidad",
   "constitutionDate": "2024-11-05",
   "members": [
-    {"_id": "66b5eb3f9321731ca563185f",
+    {"_id": "66b98308ed75a37bf68a0432",
     "role": "Miembro",
     "startDate": "2024-11-06"}
   ]
@@ -48,4 +61,4 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3001/api/groups/members/66b744227a5d992d4110619b
+GET http://localhost:3001/api/groups/members/66b983c5ed75a37bf68a0437
