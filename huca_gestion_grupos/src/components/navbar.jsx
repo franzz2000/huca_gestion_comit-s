@@ -1,5 +1,8 @@
+import { NavLink } from "react-router-dom"
+
 export const Navbar = () => {
   const btnLink = 'block py-1 text-white hover:text-accent cursor-pointer mr-4'
+  const btnActive = 'block py-1 text-accent mr-4'
   return (
     <header className="text-gray-600 body-font">
     <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -10,9 +13,9 @@ export const Navbar = () => {
         <span className="ml-3 text-xl font-semibold text-white">HCGrupos</span>
       </a>
       <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-        <a className={btnLink}>Miembros</a>
-        <a className={btnLink}>Grupos</a>
-        <a className={btnLink}>Reuniones</a>
+        <NavLink to="/miembros" className={({isActive}) => isActive?btnActive:btnLink}>Miembros</NavLink>
+        <NavLink to="/grupos" className={({isActive}) => isActive?btnActive:btnLink}>Grupos</NavLink>
+        <NavLink to="/reuniones" className={({isActive}) => isActive?btnActive:btnLink}>Reuniones</NavLink>
       </nav>
         <a className={btnLink}>Login</a>
     </div>
