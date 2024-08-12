@@ -6,6 +6,7 @@ import Reuniones from "./pages/reuniones"
 import Miembros from "./pages/miembros"
 import { Grupos } from "./pages/grupos"
 import { Footer } from "./components/footer"
+import { Login } from "./pages/login"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
               <Route path="/miembros" element={<Miembros></Miembros>}></Route>
               <Route path="/grupos" element={<Grupos></Grupos>}></Route>
               <Route path="/reuniones" element={<Reuniones></Reuniones>}></Route>
+              <Route path="/login" element={<Login></Login>}></Route>
               <Route path="/*" element={<Navigate to="/"></Navigate>}></Route>
             </Routes>
         </Layout>
