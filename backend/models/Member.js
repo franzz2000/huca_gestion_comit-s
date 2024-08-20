@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 
 const MemberSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -10,4 +10,5 @@ const MemberSchema = new mongoose.Schema({
   identifier: { type: String, required: true, unique: true } // DNI o NIE
 });
 
-module.exports = mongoose.model('Member', MemberSchema);
+const Member = mongoose.model('Member', MemberSchema);
+export default Member

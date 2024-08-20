@@ -1,17 +1,19 @@
 // controllers/committeeController.js
-const Group = require('../models/Group');
-const Member = require('../models/Member');
+import Group from '../models/Group.js'
+import Member from '../models/Member.js'
 
-exports.getAllGroups = async (req, res) => {
+const groupController = {
+
+getAllGroups: async (req, res) => {
   try {
     const groups = await Group.find().populate('members.member');
     res.json(groups);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-};
+},
 
-exports.createGroup = async (req, res) => {
+createGroup: async (req, res) => {
   const group = new Group(req.body);
   try {
     const newGroup = await group.save();
@@ -19,9 +21,8 @@ exports.createGroup = async (req, res) => {
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
-};
-
-exports.getGroup = async (req, res) => {
+},
+getGroup: async (req, res) => {
   try {
     const group = await Group.findById(req.params.id);
     if (!group) {
@@ -31,9 +32,9 @@ exports.getGroup = async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-};
+},
 
-exports.updateGroup = async (req, res) => {
+updateGroup: async (req, res) => {
   try {
     const group = await Group.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!group) {
@@ -43,9 +44,8 @@ exports.updateGroup = async (req, res) => {
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
-};
-
-exports.deleteGroup = async (req, res) => {
+},
+deleteGroup: async (req, res) => {
   try {
     const group = await Group.findByIdAndDelete(req.params.id);
     if (!group) {
@@ -55,9 +55,9 @@ exports.deleteGroup = async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-};
+},
 
-exports.addMemberToGroup = async (req, res) => {
+addMemberToGroup: async (req, res) => {
   try {
     const { groupId, memberId, role, startDate } = req.body;
 
@@ -92,9 +92,9 @@ exports.addMemberToGroup = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: 'Error al añadir miembro al grupo', error: error.message });
   }
-};
+},
 
-exports.getAllMembers = async (req, res) => {
+getAllMembers: async (req, res) => {
   try {
     const group = await Group.findById(req.params.id);
     if (!group) {
@@ -105,3 +105,6 @@ exports.getAllMembers = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 }
+}
+
+export default groupController

@@ -1,5 +1,5 @@
 // models/Meeting.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 
 const AttendanceSchema = new mongoose.Schema({
   member: { type: mongoose.Schema.Types.ObjectId, ref: 'Member' },
@@ -13,4 +13,6 @@ const MeetingSchema = new mongoose.Schema({
   comment: String
 });
 
-module.exports = mongoose.model('Meeting', MeetingSchema);
+const Meeting = mongoose.model('Meeting', MeetingSchema);
+
+export default Meeting

@@ -1,7 +1,7 @@
 // routes/members.js
-const express = require('express');
+import express from 'express'
+import memberController from '../controllers/memberController.js'
 const router = express.Router();
-const memberController = require('../controllers/memberController');
 
 router.get('/', memberController.getAllMembers);
 router.post('/', memberController.createMember);
@@ -9,4 +9,4 @@ router.get('/:id', memberController.getMember);
 router.put('/:id', memberController.updateMember);
 router.delete('/:id', memberController.deleteMember);
 
-module.exports = router;
+export default router;

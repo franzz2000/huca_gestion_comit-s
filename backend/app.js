@@ -1,15 +1,18 @@
 // app.js
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const membersRouter = require('./routes/members');
-const groupsRouter = require('./routes/groups');
-const meetingsRouter = require('./routes/meetings');
-const loginRouter = require('./routes/login');
+import express from 'express';
+import { PORT } from './config.js';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import membersRouter from './routes/members.js';
+import groupsRouter from './routes/groups.js';
+import meetingsRouter from './routes/meetings.js';
+import authRouter from './routes/auth.js';
+
+const API_PORT = process.env.PORT ?? 3001;
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: `http://localhost:${API_PORT}`
 }));
 app.use(express.json());
 
@@ -19,7 +22,6 @@ mongoose.connect('mongodb://localhost/comites_db');
 app.use('/api/members', membersRouter);
 app.use('/api/groups', groupsRouter);
 app.use('/api/meetings', meetingsRouter);
-app.use('/api/login', loginRouter);
+app.use('/api/auth', authRouter);
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${API_PORT}`));

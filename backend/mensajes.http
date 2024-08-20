@@ -1,5 +1,16 @@
 GET http://localhost:3001/api/members
 
+###
+POST http://localhost:3001/api/auth/user
+content-type: application/json
+
+{"username": "Pedro",
+    "password": "abc123",
+    "fullname": "Pedro García González",
+    "email": "franzz2000@mail.com",
+    "role": "admin"
+ }
+
 ### Crear un miembro
 POST http://localhost:3001/api/members/
 content-type: application/json

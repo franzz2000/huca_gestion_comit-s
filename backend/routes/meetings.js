@@ -1,12 +1,13 @@
 // routes/meetings.js
-const express = require('express');
-const router = express.Router();
-const meetingController = require('../controllers/meetingController');
+import express from 'express'
+import meetingController from '../controllers/meetingController.js'
 
-router.get('/', meetingController.getAllMeetings);
-router.post('/', meetingController.createMeeting);
+const router = express.Router()
+
+router.get('/', meetingController.getAllMeetings)
+router.post('/', meetingController.createMeeting)
 //router.get('/:id', meetingController.getMeeting);
 //router.put('/:id', meetingController.updateMeeting);
 //router.delete('/:id', meetingController.deleteMeeting);
 
-module.exports = router;
+export default router

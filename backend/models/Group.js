@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 
 const GroupMemberSchema = new mongoose.Schema({
   member: { type: mongoose.Schema.Types.ObjectId, ref: 'Member' },
@@ -18,4 +18,5 @@ const GroupSchema = new mongoose.Schema({
   members: [GroupMemberSchema]
 });
 
-module.exports = mongoose.model('Group', GroupSchema);
+const Group = mongoose.model('Group', GroupSchema);
+export default Group
