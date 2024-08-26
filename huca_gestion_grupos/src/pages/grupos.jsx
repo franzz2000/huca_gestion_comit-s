@@ -3,3 +3,5 @@ export const Grupos = () => {
     <div>Grupos</div>
   )
 }
+
+export default Grupos

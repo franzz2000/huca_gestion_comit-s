@@ -1,8 +1,13 @@
+import { useContext } from 'react';
 import { NavLink } from "react-router-dom"
+import { AuthContext } from '../context/AuthContext';
+import axios from 'axios'
 
-export const Navbar = () => {
+const Navbar = () => {
   const btnLink = 'block py-1 text-white hover:text-accent cursor-pointer mr-4'
   const btnActive = 'block py-1 text-accent mr-4'
+  const {user}  = useContext(AuthContext)
+
   return (
     <header className="text-gray-600 body-font">
     <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -17,8 +22,14 @@ export const Navbar = () => {
         <NavLink to="/grupos" className={({isActive}) => isActive?btnActive:btnLink}>Grupos</NavLink>
         <NavLink to="/reuniones" className={({isActive}) => isActive?btnActive:btnLink}>Reuniones</NavLink>
       </nav>
-        <NavLink to="/login" className={({isActive}) => isActive?btnActive:btnLink}>Login</NavLink>
+      {user ? (
+          <p>Bienvenido, {user.fullname} <button onClick={()=>axios.post('http://localhost:3001/api/auth/logout')}>Logout</button></p> // Mostrar el nombre del usuario
+        ) : (
+          <NavLink to="/login" className={({isActive})=> isActive?btnActive:btnLink}>Login</NavLink>
+        )}
     </div>
   </header>
   )
 }
+
+export default Navbar

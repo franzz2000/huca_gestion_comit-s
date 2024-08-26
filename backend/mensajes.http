@@ -1,15 +1,42 @@
 GET http://localhost:3001/api/members
 
-###
+### Crear un usuario
 POST http://localhost:3001/api/auth/user
 content-type: application/json
 
 {"username": "Pedro",
-    "password": "abc123",
+    "password": "abc12345",
     "fullname": "Pedro García González",
     "email": "franzz2000@mail.com",
     "role": "admin"
  }
+
+### Login
+POST http://localhost:3001/api/auth/login
+content-type: application/json
+
+{
+    "username": "Pedro",
+    "password": "abc12345"
+}
+###
+POST http://localhost:3001/api/auth/logout
+content-type: application/json
+
+{
+    "username": "Pedro",
+    "password": "abc12345"
+}
+
+### Wrong Login username
+POST http://localhost:3001/api/auth/login
+content-type: application/json
+
+{
+    "username": "Padro",
+    "password": "abc12345"
+}
+
 
 ### Crear un miembro
 POST http://localhost:3001/api/members/

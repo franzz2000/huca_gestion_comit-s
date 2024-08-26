@@ -1,5 +1,4 @@
-
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className='text-gray-600 body-font'>
       <div className='container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col'>
@@ -177,3 +176,5 @@ export const Footer = () => {
     </footer>
   )
 }
+
+export default Footer

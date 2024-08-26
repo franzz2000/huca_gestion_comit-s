@@ -5,7 +5,8 @@ const router = express.Router();
 
 router.post('/user', authController.createUser);
 router.post('/login', authController.login);
-//router.post('/logout', authController.logout);
+router.get('/', authController.checkAuth);
+router.post('/logout', authController.logout);
 
 //router.get('/protected', authController.protected);
 
